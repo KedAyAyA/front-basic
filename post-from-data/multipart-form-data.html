@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>multipart-form-data</title>
+</head>
+<body>
+    <form action="/hehe" method="post" enctype="multipart/form-data" id="myform">
+        <input type="file" name="file" id="">
+        <input type="text" name="username" placeholder="名字">
+        <input type="submit" value="确定">
+    </form>
+
+    <button id="submit">确定</button>
+</body>
+</html>
+<script>
+    function ajaxFromData(e) {
+        var formData = new FormData(document.getElementById("myform")),
+            xhr = new XMLHttpRequest()
+        xhr.open("POST", "/hehe")
+        // xhr.setRequestHeader("Content-Type", "multipart/form-data")
+        xhr.send(formData)
+    }
+
+    document.querySelector('#submit').addEventListener('click', (e) => {
+        ajaxFromData(e)
+    })
+</script>
