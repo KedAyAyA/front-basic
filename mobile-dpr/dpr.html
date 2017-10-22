@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dpr</title>
+    <style>
+        span {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <span>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+    <img src="./已选.png" alt="" srcset="./已选@2x.png 2x, ./已选@3x.png 3x" height="100%">
+
+    <div id="info"></div>
+</body>
+</html>
+<script>
+    var info = document.querySelector('#info')
+    var dpr = window.devicePixelRatio
+    var img = document.querySelector('img')
+    img.onload = function() {
+        info.innerHTML = 'dpr: '+dpr+', img: '+img.width + ' 屏幕分辨率的高：' + window.screen.height + ' 屏幕分辨率的宽：' + window.screen.width + ' 屏幕可用工作区宽度：'+ window.screen.availWidth
+    }
+    
+</script>

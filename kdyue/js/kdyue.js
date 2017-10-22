@@ -1,6 +1,5 @@
 function Kdyue(options) {
     this._data = options.data
-    console.log(options.el)
     this.$el = document.querySelector(options.el)
 
     // 代理数据
@@ -137,7 +136,6 @@ Dep.prototype.notify = function() {
 Dep.target = null
 
 function Compile(data, el) {
-    console.log(el)
     this.$el = el
     this._data = data
     this._init()
