@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 300ms延迟的来源 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mouse&touch</title>
+    <style>
+        #mouse {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="mouse"></div>
+</body>
+</html>
+<script>
+    var srctime = new Date().valueOf()
+    var mouse = document.querySelector('#mouse')
+    var type = 'mousedown mouseup click tap touchstart touchend touchmove'
+    var temp = document.createElement('p')
+    temp.innerText = navigator.userAgent
+
+    mouse.appendChild(temp)
+    eventListen(type)
+
+    function appendLabel(type, time) {
+        var a = document.createElement('p')
+        a.innerText = type + ': ' + (time - srctime)
+        document.querySelector('body').appendChild(a)
+    }
+
+    function eventListen(str) {
+        var list = str.split(' ')
+        list.forEach(function(i) {
+            mouse.addEventListener(i, function(e) {
+                var time = new Date().valueOf()
+                console.log(i, time - srctime)
+                appendLabel(i, time)
+            })
+        })
+    }
+
+</script>
