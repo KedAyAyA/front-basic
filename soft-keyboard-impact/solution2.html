@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>soft-keyboard</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-size: 18px;
+            position: relative; 
+        }
+
+        .header {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .body {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        .footer {
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            width: auto;
+            left: 0;
+            right: 0;
+            margin: 0 20px;
+            bottom: 10px;
+            text-align: center;
+            border-radius: 100px;
+            color: #fff;
+            background-color: #d32;
+        }
+
+        p {
+            background-color: #fff;
+        }
+
+        textarea {
+            width: 100%;
+            outline: none;
+            resize: none;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="body">
+        <section class="header">
+            <span>标题啦啦啦啦</span>
+        </section>
+        <section>
+            <p>啦啦啦啦啦</p>
+            <p>啦啦啦啦啦</p>
+            <p>啦啦啦啦啦</p>
+            <p>啦啦啦啦啦</p>
+            <p>啦啦啦啦啦</p>
+            <div>
+                <textarea rows="5"></textarea>
+            </div>
+        </section>
+    </section>
+    <section class="footer">
+        <span>提交</span>
+    </section>
+</body>
+</html>
+<script>
+    var html = document.querySelector('html')
+    var body = document.query
+    console.log(document.body.clientHeight)
+    html.style.height = document.body.clientHeight + 'px'
+</script>
