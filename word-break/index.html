@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>word-break</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: #cdcdcd;
+            margin-top: 10px;
+        }
+        .test {
+
+        }
+
+        .test2 {
+
+        }
+
+        .test3 {
+            /* 单词内是否断行
+            word-wrap: break-word;
+            
+            单词内如何断行
+            word-break: break-all; */
+        }
+
+        .test4 {
+            /* 是否允许单词内断行 */
+            word-wrap: break-word;
+        }
+
+        .test5 {
+            /* 单词内如何断行 */
+            word-break: break-all;
+        }
+
+        .test6 {
+            /* 单行省略 */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="test">
+        12321312312312sdjflkasdjklfqwiorw12321312312312sdjflkasdjklfqwiorw12321312312312sdjflkasdjklfqwiorw12321312312312sdjflkasdjklfqwiorw12321312312312sdjflkasdjklfqwiorw
+    </div>
+    <div class="test2">
+        i'm a bad boy        i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy i'm a bad boy 
+    </div>
+
+    <div class="test3">
+        我是一个呵呵呵呵呵312312312312312我是一个呵呵呵呵呵 123123dklsaf123123123123123211231232112j 我是一个呵呵呵呵呵我是
+    </div>
+
+    <div class="test4">
+        我是一个呵呵呵呵呵312312312312312我是一个呵呵呵呵呵 123123dklsaf123123123123123211231232112j 我是一个呵呵呵呵呵我是一
+    </div>
+
+    <div class="test5">
+        我是一个呵呵呵呵呵312312312312312我是一个呵呵呵呵呵 123123dklsaf123123123123123211231232112j 我是一个呵呵呵呵呵我是一个呵呵呵呵呵我是
+    </div>
+
+    <div class="test6">
+        我是一个呵呵呵呵呵312312312312312我是一个呵呵呵呵呵 123123dklsaf123123123123123211231232112j 我是一个呵呵呵呵呵我是一个呵呵呵呵呵我是
+    </div>
+</body>
+</html>
