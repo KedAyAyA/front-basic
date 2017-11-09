@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- 300ms延迟的来源 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <title>mouse&touch</title>
     <style>
@@ -15,22 +15,64 @@
             background-color: yellow;
             cursor: pointer;
         }
+
+        #input {
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
     <div id="mouse"></div>
     <button id="hehe">hehe</button>
+    <input type="text" id="input">
 </body>
 </html>
 <script>
     var srctime = new Date().valueOf()
     var mouse = document.querySelector('#mouse')
     var hehe = document.querySelector('#hehe')
+    var input = document.querySelector('#input')
     // var type = 'mousedown mouseup mousemove click touchstart touchend touchmove'
     var type = 'touchstart click touchend touchmove mousedown mouseup mouseover'
     var temp = document.createElement('p')
     temp.innerText = navigator.userAgent
 
+    input.addEventListener('mousedown', function(e) {
+        console.log('mousedown')
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
+
+    input.addEventListener('touchstart', function(e) {
+        console.log('touchstart')
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
+
+    input.addEventListener('touchend', function(e) {
+        console.log('touchend')
+        e.preventDefault()
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
+
+    input.addEventListener('mouseup', function(e) {
+        console.log('mouseup')
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
+
+    input.addEventListener('click', function(e) {
+        console.log('click')
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
+
+    input.addEventListener('focus', function(e) {
+        console.log('focus')
+        var time = new Date().valueOf()
+        console.log(time - srctime, e)
+    })
 
     // document.querySelector('#hehe').addEventListener('click', function(e) {
     //     var time = new Date().valueOf()
@@ -59,9 +101,10 @@
         var list = str.split(' ')
         list.forEach(function(i) {
             mouse.addEventListener(i, function(e) {
-                if (i === 'touchstart') {
-                    e.preventDefault()
-                    // // e.stopPropagation()
+                if (i === 'mouseup' || i === 'mousedown' || i === 'mousemove') {
+                    // e.preventDefault()
+                    // e.stopPropagation()
+                    // console.log('prevent')
                 }
                 var time = new Date().valueOf()
                 console.log(i, time - srctime, e)
