@@ -1,0 +1,26 @@
+{
+  "name": "front-basic",
+  "version": "0.0.1",
+  "description": "daily problem & do some basic skills practice ",
+  "main": " ",
+  "scripts": {
+    "test-type-judge": "./node_modules/mocha/bin/mocha ./basic-utils/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KedAyAyA/front-basic.git"
+  },
+  "keywords": [
+    "basic",
+    "skill"
+  ],
+  "author": "kedaya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KedAyAyA/front-basic/issues"
+  },
+  "homepage": "https://github.com/KedAyAyA/front-basic#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}

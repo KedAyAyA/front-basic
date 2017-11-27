@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    .column {
+      height: 500px;
+      margin-bottom: 10px;
+    }
+
+    /* 利用BFC的三栏布局 可能对IE6需要做另外的处理 在左右两栏合大于宽度会变形*/
+    .ex-1-left {
+      float: left;
+      height: 200px;
+      width: 300px;
+      background-color: yellow;
+    }
+
+    .ex-1-middle {
+      background-color: blue;
+      overflow: scroll;
+    }
+
+    .ex-1-right {
+      float: right;
+      height: 200px;
+      width: 300px;
+      background-color: red;
+    }
+
+    /* 圣杯布局 宽度过小会变形 利用的是负margin*/
+    .shengbei {
+      padding: 0 300px 0 300px;
+    }
+
+    .ex-2-left {
+      float: left;
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: yellow;
+      margin-left: -100%;
+      left: -300px;
+    }
+
+    .ex-2-right {
+      float: left;
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: red;
+      margin-left: -300px;
+      right: -300px;
+    }
+
+    .ex-2-middle {
+      float: left;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: blue;
+    }
+
+    /* 双飞翼布局 */
+    .ex-3-middle {
+      float: left;
+      width: 100%;
+      height: 400px; 
+    }
+
+    .ex-3-middle-wrap {
+      margin: 0 300px 0 300px;
+      height: 100%;
+      background-color: blue;
+    }
+
+    .ex-3-left {
+      width: 300px;
+      float: left;
+      height: 200px;
+      background-color: red;
+      margin-left: -100%;
+    }
+
+    .ex-3-right {
+      width: 300px;
+      margin-left: -300px;
+      float: left;
+      height: 200px;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <section class="column">
+    <!-- 浮动元素前置 -->
+    <section class="ex-1-left"></section>
+    <section class="ex-1-right">
+    </section>
+    <section class="ex-1-middle">
+        <p>呵呵呵</p>
+        <p>呵呵呵</p>
+        <p>呵呵呵</p>
+        <p>呵呵呵</p>
+      </section>
+  </section>
+
+  <section class="column shengbei">
+    <section class="ex-2-middle">
+      <p>呵呵呵</p>
+      <p>呵呵呵</p>
+      <p>呵呵呵</p>
+      <p>呵呵呵</p>
+    </section>
+    <section class="ex-2-left"></section>
+    <section class="ex-2-right">
+    </section>
+  </section>
+  
+  <section class="column shuangfeiyi">
+    <section class="ex-3-middle">
+      <section class="ex-3-middle-wrap"></section>
+    </section>
+    <section class="ex-3-left">
+      
+    </section>
+    <section class="ex-3-right">
+      
+    </section>
+  </section>
+
+  <section class=""></section>
+</body>
+</html>

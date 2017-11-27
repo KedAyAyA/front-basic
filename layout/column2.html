@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    .column {
+      height: 500px;
+      margin-bottom: 10px;
+    }
+    
+    .ex-1-left {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+
+    .ex-1-right {
+      height: 100%;
+      background-color: rgb(128, 0, 0);
+      /* 建立BFC来与float相互隔离 */
+      overflow: scroll
+    }
+
+    .ex-2-left {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+
+    .ex-2-right {
+      height: 100%;
+      background-color: rgb(128, 0, 0);
+      margin-left: 200px;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <!-- 双栏布局 左侧固定右侧自适应 -->
+  <!-- 1 BFC与移动相隔离 很好用 基本没什么副作用 -->
+  <section class="column">
+    <section class="ex-1-left"></section>
+    <section class="ex-1-right"></section>
+  </section>
+
+  <!-- 2 利用margin与左侧相分离 -->
+  <section class="column">
+      <section class="ex-2-left"></section>
+      <section class="ex-2-right"></section>
+  </section>
+</body>
+</html>
