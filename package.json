@@ -4,7 +4,7 @@
   "description": "daily problem & do some basic skills practice ",
   "main": " ",
   "scripts": {
-    "test-type-judge": "./node_modules/mocha/bin/mocha ./basic-utils/test"
+    "test": "./node_modules/mocha/bin/mocha ./basic-utils/test"
   },
   "repository": {
     "type": "git",
