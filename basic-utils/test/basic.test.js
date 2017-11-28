@@ -38,4 +38,32 @@ describe('basic-judge', () => {
     })
   })
 
+  describe('forEach', () => {
+    it('forEach array check', () => {
+      let a = [1, 2, 3, 4, 5]
+      let af = []
+      basic.forEach(a, function (value, index) {
+        af.push(value + index)
+      })
+      assert.equal(1, af[0])
+      assert.equal(3, af[1])
+      assert.equal(5, af[2])
+      assert.equal(7, af[3])
+      assert.equal(9, af[4])
+    })
+
+    it('forEach object check', () => {
+      let a = {
+        foo: 'hehe',
+        obj: 'hehe'
+      }
+      let af = {}
+      basic.forEach(a, function (value, key) {
+        af[key] = value + key
+      })
+      assert.equal('hehefoo', af.foo)
+      assert.equal('heheobj', af.obj)
+    })
+  })
+
 })
