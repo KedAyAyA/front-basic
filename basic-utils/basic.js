@@ -2,16 +2,17 @@ var typeJudge = require('./type-judge.js')
 
 function merge() {
   let res = {}
+  function assignValue (val, key, obj) {
+    if (val && typeof val === 'object') {
+      res[key] = merge(val)
+    } else {
+      res[key] = val
+    }
+  }
   for (let i = 0; i < arguments.length; i++) {
     let temp = arguments[i]
     if (temp && typeof temp === 'object') {
-      for (let key in temp) {
-        if (temp[key] && typeof temp[key] === 'object') {
-          res[key] = merge(temp[key])
-        } else {
-          res[key] = temp[key]
-        }
-      }
+      forEach(temp, assignValue)
     }
   }
   return res
