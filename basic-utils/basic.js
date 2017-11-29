@@ -1,6 +1,6 @@
 var typeJudge = require('./type-judge.js')
 
-function merge() {
+function merge () {
   let res = {}
   function assignValue (val, key, obj) {
     if (val && typeof val === 'object') {
@@ -18,7 +18,7 @@ function merge() {
   return res
 }
 
-function forEach(val, fn) {
+function forEach (val, fn) {
   if (val === null && val === undefined) {
     return
   }
@@ -42,7 +42,18 @@ function forEach(val, fn) {
   
 }
 
+function extend (target, source, thisArg) {
+  for (let key in source) {
+    if (typeof source[key] === 'function') {
+      target[key] = source[key].bind(thisArg)
+    } else {
+      target[key] = source[key]
+    }
+  }
+}
+
 module.exports = {
   merge,
-  forEach
+  forEach,
+  extend
 }

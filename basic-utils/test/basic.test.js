@@ -66,4 +66,29 @@ describe('basic-judge', () => {
     })
   })
 
+  describe('extend', () => {
+    it('extend obj', () => {
+      let a = {}
+      let b = {
+        test: '123'
+      }
+      basic.extend(a, b)
+      assert.equal('123', a.test)
+    })
+
+    it('extend func', () => {
+      let a = {}
+      let b = {
+        test: function () {
+          return this.flag
+        }
+      }
+      let c = {
+        flag: 'test'
+      }
+      basic.extend(a, b, c)
+      assert.equal('test', a.test())
+    })
+  })
+
 })
