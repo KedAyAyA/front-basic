@@ -21,8 +21,8 @@
   * [x] BFC
   * [x] rem
   * flex
-    * [ ]  PC 方案
-    * [ ]  移动端全兼容方案
+    * [x]  PC 方案
+    * [x]  移动端全兼容方案
   * [ ]  transform
   * [ ]  transition
 
@@ -39,7 +39,7 @@
   * 请求
     * promise
       * [x] 基础使用
-      * [ ]  高阶用法
+      * [ ] 高阶用法
     * [x] XMLHttpRequest
     * 跨域
       * [x] CORS
@@ -47,9 +47,9 @@
       * [x] iframe
       * [x] postMessage
     * cookie
-      * [ ]  cookie各种操作
+      * [ ] cookie各种操作
   - 源码学习
     * [x] FastClick
-    * [ ]  Axios
-    * [ ]  zepto.js
-    * [ ]  Vue
+    * [ ] Axios
+    * [ ] zepto.js
+    * [ ] Vue
