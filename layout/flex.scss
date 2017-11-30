@@ -1,0 +1,41 @@
+@import "_flex.scss";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.layout1 {
+  height: 100%;
+  @include flexbox;
+  @include flex-direction(column);
+}
+
+.layout1 > header {
+  @include flex-basis(80px);
+  background-color: red;
+}
+
+.layout1 > main {
+  @include flex-grow(1);
+  @include flexbox;
+  @include justify-content(space-between);
+  background-color: yellow;
+}
+
+.layout1 > main > div {
+  height: 40px;
+  width: 40px;
+  @include flex(0, 0, auto);
+  background-color: black;
+}
+
+.layout1 > footer {
+  @include flex-basis(80px);
+  background-color: blue;
+}
+
+.test {
+  @include flexbox;
+}

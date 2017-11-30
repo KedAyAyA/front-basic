@@ -1,0 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.layout1 {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.layout1 > header {
+  -webkit-flex-basis: 80px;
+  -moz-flex-basis: 80px;
+  -ms-flex-preferred-size: 80px;
+  flex-basis: 80px;
+  background-color: red; }
+
+.layout1 > main {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  background-color: yellow; }
+
+.layout1 > main > div {
+  height: 40px;
+  width: 40px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  background-color: black; }
+
+.layout1 > footer {
+  -webkit-flex-basis: 80px;
+  -moz-flex-basis: 80px;
+  -ms-flex-preferred-size: 80px;
+  flex-basis: 80px;
+  background-color: blue; }
+
+.test {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*# sourceMappingURL=example.css.map */
