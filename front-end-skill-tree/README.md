@@ -47,7 +47,7 @@
       * [x] iframe
       * [x] postMessage
     * cookie
-      * [ ] cookie各种操作
+      * [x] cookie各种操作
   - 源码学习
     * [x] FastClick
     * [ ] Axios
