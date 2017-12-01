@@ -50,6 +50,9 @@
       * [x] cookie各种操作
   - 源码学习
     * [x] FastClick
-    * [ ] Axios
+    * [x] Axios
     * [ ] zepto.js
     * [ ] Vue
+    * [ ] lodash
+    * [ ] ElementUI
+    * [ ] Bootstrap
