@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script src="../cookie.js"></script>
+<script>
+  let cookiewr = cookie()
+  console.log(cookiewr.read('email'))
+  cookiewr.write({
+    name: 'test',
+    value: 'kedayayayaya',
+    expires: Date.now() + 1000 * 60
+  })
+  console.log(cookiewr.read('test'), document.cookie)
+  
+  cookiewr.remove('test')
+  console.log(cookiewr.read('test'))
+</script>
+</html>
