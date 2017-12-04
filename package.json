@@ -4,7 +4,8 @@
   "description": "daily problem & do some basic skills practice ",
   "main": " ",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./basic-utils/test"
+    "testutil": "./node_modules/mocha/bin/mocha ./basic-utils/test",
+    "testcurry": "./node_modules/mocha/bin/mocha ./curry/test"
   },
   "repository": {
     "type": "git",
