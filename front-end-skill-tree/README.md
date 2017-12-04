@@ -48,6 +48,8 @@
       * [x] postMessage
     * cookie
       * [x] cookie各种操作
+    * curry
+      * [x] add(1)(2)(3)
   - 源码学习
     * [x] FastClick
     * [x] Axios
