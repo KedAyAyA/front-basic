@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <iframe src="http://localhost:10889/server2/crossdomain.html" style="display: none;" id="cross"></iframe>
+</body>
+</html>
+<script>
+  // 跨域获取数据与跨域获取cookie
+  window.onload = function () {
+    var iframe = document.querySelector('#cross')
+    iframe.contentWindow.postMessage({
+      url: 'http://localhost:10889/getUser',
+      method: 'get'
+    }, 'http://localhost:10889')
+  }
+  
+  window.addEventListener('message', function (event) {
+    console.log(event.data)
+  })
+</script>

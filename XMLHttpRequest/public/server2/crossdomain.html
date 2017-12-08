@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script src="http://localhost:10888/ajax.js"></script>
+<script>
+  window.addEventListener('message', function (event) {
+    // 做防护错误 不是可信赖的域直接返回
+    if (event.origin !== 'http://localhost:10888') {
+      return
+    }
+    ajax(Object.assign(event.data, {
+      callback: function (data) {
+        let res = {
+          cookie: document.cookie,
+          data: data
+        }
+        window.top.postMessage(res, event.origin)
+      }
+    }))
+  })
+</script>

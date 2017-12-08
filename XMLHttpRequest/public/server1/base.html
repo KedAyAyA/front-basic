@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  base
+</body>
+</html>
+<script src="/ajax.js"></script>
+<script>
+  function jsonpCallback (data) {
+    console.log('jsonp', data)
+  }
+  // no cross
+  ajax({
+    url: 'http://localhost:10888/getUser',
+    method: 'get',
+    callback: function (data) {
+      console.log(data)
+    }
+  })
+
+  // cross fail
+  ajax({
+    url: 'http://localhost:10889/getUser',
+    method: 'get',
+    callback: function (data) {
+      console.log(data)
+    }
+  })
+
+  // jsonp
+  jsonp({
+    url: 'http://localhost:10889/getUser',
+    callback: 'jsonpCallback'
+  })
+</script>

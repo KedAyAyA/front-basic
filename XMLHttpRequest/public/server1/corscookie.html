@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script src="/ajax.js"></script>
+<script>
+  ajax({
+    url: 'http://localhost:10889/corscookie',
+    method: 'get',
+    withCredentials: true,
+    callback: function (data) {
+      console.log(data)
+    },
+    xflag: true
+  })
+
+  ajax({
+    url: 'http://localhost:10889/corscookie',
+    method: 'get',
+    withCredentials: true,
+    callback: function (data) {
+      console.log(data)
+    }
+  })
+</script>

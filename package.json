@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/KedAyAyA/front-basic#readme",
   "devDependencies": {
+    "express": "^4.16.2",
     "mocha": "^4.0.1"
   }
 }
