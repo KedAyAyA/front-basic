@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="normal">仅url为赋值name</button>
+  <button id="name">指定name</button>
+  <button id="params">指定params</button>
+</body>
+</html>
+<script>
+  var url = '/window-open/open.html'
+  document.getElementById('normal').onclick = function () {
+    // 对于未命名的直接打开任意数量的窗口
+    var curwindow = window.open(url)
+    console.log(curwindow)
+  }
+
+  document.getElementById('name').onclick = function () {
+    // 对于未命名的直接打开任意数量的窗口
+    var curwindow = window.open(url, 'open')
+    
+  }
+
+  document.getElementById('params').onclick = function () {
+    // 对于未命名的直接打开任意数量的窗口
+    // 为空按默认值创建一个弹出框
+    var params = ''
+    params += 'left=200,' // 距离屏幕左边
+    params += 'top=200,' // 距离屏幕顶端
+    params += 'height=200,' // 窗口高度
+    params += 'width=200,' // 窗口宽度
+    // 以下在chrome均无用
+    params += 'status=1,'
+    params += 'menubar=1,'
+    params += 'titlebar=1,'
+    params += 'toolbar=1'
+    // http://www.cnblogs.com/_franky/archive/2011/04/06/2006857.html
+    var curwindow = window.open(url, 'open', params)
+  }
+</script>
