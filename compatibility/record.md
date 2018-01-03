@@ -9,3 +9,5 @@
 + IE8及之前 Number.toFixed() -0.94~-0.5 0.5~0.94近似为0的bug
 
 + IE8- delete window的属性会报错
+
++ IE在cloneNode的时候会复制事件处理器
