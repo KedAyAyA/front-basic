@@ -12,3 +12,23 @@ function convertToArray (nodeList) {
   }
   return array
 }
+
+// 动态加载Script标签
+function loadScript (url) {
+  var script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = url
+  document.body.appendChild(script)
+}
+
+// 兼容IE动态添加script方法
+function loadScriptString (code) {
+  var script = document.createElement('script')
+  script.type = 'text/javascript'
+  try {
+    script.appendChild(document.createTextNode(code))
+  } catch (e) {
+    script.text = code
+  }
+  document.body.appendChild(script)
+}
