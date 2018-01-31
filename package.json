@@ -6,7 +6,8 @@
   "scripts": {
     "testutil": "./node_modules/mocha/bin/mocha ./basic-utils/test",
     "testcurry": "./node_modules/mocha/bin/mocha ./curry/test",
-    "testlocation": "./node_modules/mocha/bin/mocha ./location/test"
+    "testlocation": "./node_modules/mocha/bin/mocha ./location/test",
+    "teststring": "./node_modules/mocha/bin/mocha ./dom/test"
   },
   "repository": {
     "type": "git",
