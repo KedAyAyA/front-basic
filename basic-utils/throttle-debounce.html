@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=/, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="throttle">throttle</button>
+  <button id="debounce">debounce</button>
+</body>
+</html>
+<script>
+
+  function debounce (func, wait) {
+    var timer = null
+    return function () {
+      console.log(new Date().valueOf())
+      var context = this
+      var args = arguments
+      if (timer) {
+        clearTimeout(timer)
+        timer = null
+      }
+      function execFunc () {
+        func.apply(context, args)
+      }
+      timer = setTimeout(execFunc, wait)
+    }
+  }
+
+  function throttle (func, interval) {
+    var timer = null
+    var time = null
+    return function () {
+      var context = this
+      var args = arguments
+      var now = new Date().valueOf()
+      if (time === null) {
+        time = now
+      }
+      var minus = now - time
+      console.log(minus)
+      function bindFunc () {
+        func.apply(context, args)
+      }
+      if (minus === 0) {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(bindFunc, interval)
+      } else if (minus >= interval) {
+        time = now
+        timer = setTimeout(bindFunc, interval)
+      }
+    }
+  }
+
+  /***
+   * test 
+  ***/
+  var clickThrottle = throttle(function () {
+    console.log('throttle', arguments)
+  }, 300)
+
+  var clickDebounce = debounce(function () {
+    console.log('debounce', new Date().valueOf())
+  }, 200)
+
+  console.log(clickThrottle)
+
+  var element_throttle = document.querySelector('#throttle')
+  element_throttle.addEventListener('click', clickThrottle)
+
+  var element_debounce = document.querySelector('#debounce')
+  element_debounce.addEventListener('click', clickDebounce)
+  // setInterval(function() {
+  //   element_throttle.click()
+  // }, 300)
+  // setInterval(function() {
+  //   element_throttle.click()
+  // }, 200)
+  // setInterval(function() {
+  //   element_throttle.click()
+  // }, 100)
+  // setInterval(function() {
+  //   element_throttle.click()
+  // }, 150)
+  
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 300)
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 300)
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 300)
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 300)
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 200)
+  // setInterval(function() {
+  //   element_debounce.click()
+  // }, 100)
+</script>
