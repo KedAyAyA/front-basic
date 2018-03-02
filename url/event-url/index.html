@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="pushState">pushState</button>
+  <button id="pushHash">pushHash</button>
+</body>
+</html>
+<script>
+  // onhashchange
+  var i = 1
+  var pushState = document.getElementById('pushState')
+  var pushHash = document.getElementById('pushHash')
+  /**
+   * history.pushState方法可以在浏览器历史纪录里插入一条纪录，改变url的同时并不造成页面的刷新
+   * 兼容性ie9+
+   * 并不触发popstate事件,修改hash也并不触发hashchange事件
+   */
+  pushState.addEventListener('click', function () {
+    history.pushState({
+      i: i
+    }, null, `${i++}.html`)
+  })
+
+  pushHash.addEventListener('click', function () {
+    history.pushState({
+      i: i
+    }, null, `#state=${i++}`)
+  })
+
+  window.addEventListener('hashchange', function (e) {
+    console.log(location.href)
+  })
+
+
+  /** 
+   * popstate
+   * 仅调用pushState和replaceState接口是不会触发该事件
+   * 在用户点击后退前进按钮，或者调用histroy.go等操作的时候会触发该事件
+   */ 
+  window.addEventListener('popstate', function (e) {
+    console.log(e)
+  })
+</script>
