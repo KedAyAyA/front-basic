@@ -14,20 +14,23 @@
     var input = document.querySelector("#keyboard")
 
     // ff与chrome在输入中文的时候触发情况不同
-    input.addEventListener('keydown', function(e) {
-        console.log('keydown', e.keyCode)
+    window.addEventListener('keydown', function(e) {
+        console.log('keydown', e.key, input.value)
+        // e.preventDefault()
     })
 
-    input.addEventListener('keypress', function(e) {
-        console.log('keypress', e.keyCode)
+    window.addEventListener('keypress', function(e) {
+        console.log('keypress', e.key, input.value)
+        // e.preventDefault()
     })
 
-    input.addEventListener('keyup', function(e) {
-        console.log('keyup', e.keyCode)
+    window.addEventListener('keyup', function(e) {
+        console.log('keyup', e.key, input.value)
     })
 
     // ff与chrome在输入中文的时候触发情况相同
-    input.addEventListener('input', function(e) {
-        console.log('input', e.keyCode)
+    window.addEventListener('input', function(e) {
+        console.log('input', e, input.value)
+        e.preventDefault()
     })
 </script>
